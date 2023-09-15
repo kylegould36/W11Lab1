@@ -16,7 +16,8 @@ app.get("/tip/:total/:tipPercentage", function (req, res) {
 
 const magic = require("./models/magic.js");
 app.get("/magic/Will%20I%20Be%20A%20Millionaire", function (req, res) {
-  res.send("<h1>" + magic[Math.floor(Math.random() * magic.length)] + "</h1>");
+  const random = magic[Math.floor(Math.random() * magic.length)];
+  res.send("<h1>" + random + "</h1>");
 });
 
 app.listen(port, () => {
